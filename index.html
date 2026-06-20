@@ -1,428 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my website</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Krishna Portfolio</title>
 
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="style.css">
+body{
+    background:#0b1220;
+    color:white;
+}
 
+/* Sidebar */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:250px;
+    height:100%;
+    background:#0f1a2e;
+    padding:20px;
+}
+
+.sidebar h2{
+    color:#4ea1ff;
+    margin-bottom:20px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    padding:10px;
+    text-decoration:none;
+    margin:5px 0;
+    border-radius:8px;
+}
+
+.sidebar a:hover{
+    background:#1e2b45;
+}
+
+/* Main */
+.main{
+    margin-left:260px;
+    padding:20px;
+}
+
+/* Hero */
+.hero{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    background:#111c33;
+    padding:20px;
+    border-radius:15px;
+}
+
+.hero img{
+    width:180px;
+    border-radius:15px;
+}
+
+.hero h1{
+    color:#4ea1ff;
+}
+
+.btn{
+    padding:10px 15px;
+    margin-top:10px;
+    background:#4ea1ff;
+    border:none;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Cards */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.card{
+    background:#111c33;
+    padding:15px;
+    border-radius:12px;
+}
+
+/* Skills */
+.skill-bar{
+    background:#1e2b45;
+    height:10px;
+    border-radius:10px;
+    margin:5px 0;
+}
+
+.fill{
+    height:10px;
+    background:#4ea1ff;
+    border-radius:10px;
+}
+
+/* Timeline */
+.timeline{
+    border-left:2px solid #4ea1ff;
+    padding-left:15px;
+}
+
+.timeline div{
+    margin-bottom:10px;
+}
+
+/* Language */
+.lang{
+    position:fixed;
+    top:10px;
+    right:10px;
+}
+
+.lang button{
+    padding:5px 10px;
+    margin-left:5px;
+}
+
+</style>
 </head>
+
 <body>
 
-<!-- custom cursors  -->
-<div class="cursor-1"></div>
-<div class="cursor-2"></div>
+<!-- Language -->
+<div class="lang">
+    <button onclick="setLang('np')">🇳🇵 नेपाली</button>
+    <button onclick="setLang('en')">🇺🇸 English</button>
+</div>
 
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2 id="name">Krishna</h2>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Skills</a>
+    <a href="#">Projects</a>
+    <a href="#">Timeline</a>
+    <a href="#">Contact</a>
+</div>
 
-<div id="menu-bars" class="fas fa-bars"></div>
-    
-<!-- header section starts  -->
+<!-- Main -->
+<div class="main">
 
-<header>
+<!-- Hero -->
+<div class="hero">
+    <img src="https://via.placeholder.com/180" />
+    <div>
+        <h1 id="title">Full Stack Developer</h1>
+        <p id="desc">AI | Flask | Firebase | Kotlin Developer</p>
+        <button class="btn" id="cv">Download CV</button>
+    </div>
+</div>
 
-    <a href="#" class="logo"> <span>krishna kadayat</span></a>
+<!-- Skills -->
+<div class="grid">
+    <div class="card">
+        <h3>Skills</h3>
+        Python
+        <div class="skill-bar"><div class="fill" style="width:95%"></div></div>
 
-    <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#about">about</a>
-        <a href="#service">service</a>
-        <a href="#experience">experience</a>
-        <a href="#hobbies">hobbies</a>
-        <a href="#contact">contact</a>
-    </nav>
+        Flask
+        <div class="skill-bar"><div class="fill" style="width:90%"></div></div>
 
-    <div class="follow">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
+        Firebase
+        <div class="skill-bar"><div class="fill" style="width:88%"></div></div>
     </div>
 
-</header>
-
-<!-- header section ends -->
-
-<!-- home section starts  -->
-
-<section class="home" id="home">
-
-    <div class="content">
-        <span class="hi"> Welcome, </span>
-        <h3> i am <span> Krishna kadayat </span> </h3>
-        <p class="info">Students of FWU, Nepal </p>
-        <p class="text"> Hey, This is my Homepage, So i have to say something about myself.
-            i am a computer engineering students of far western university mahendranager, Nepal. </p>
-        <a href="#about" class="btn">about me</a>
+    <div class="card">
+        <h3>Projects</h3>
+        <p>Attendance System</p>
+        <p>AI Chatbot</p>
+        <p>E-Commerce App</p>
     </div>
 
-    <div class="image">
-        <img src="home-img.png" alt="">
+    <div class="card">
+        <h3>Stats</h3>
+        <p>50+ Projects</p>
+        <p>100+ GitHub Commits</p>
+        <p>10+ Technologies</p>
     </div>
+</div>
 
-</section>
-
-<!-- home section ends -->
-
-<!-- about section starts  -->
-
-<section class="about" id="about">
-
-<h1 class="heading"> about <span> me </span> </h1>
-
-<div class="row-1">
-
-    <div class="image">
-        <img src="about-img.jpg" alt="">
+<!-- Timeline -->
+<div class="card" style="margin-top:20px;">
+    <h3>Timeline</h3>
+    <div class="timeline">
+        <div>2018 - SEE Pass</div>
+        <div>2020 - +2 Science</div>
+        <div>2023 - CSIT Study</div>
+        <div>2025 - AI Development</div>
     </div>
-
-    <div class="content">
-        <h3> my name is Krishna Kadayat & i am a FWU computer engineering students </h3>
-        <p>Hey, This is my website, So i have to say something about myself.
-
-            I am a person who is positive about every aspect of life. There are many things i like to do, to see, and to exprences. I like write, I likes to think, dream, talk and listen.
-            i am nowhere close to thsese people, yet. i am just someone who does some teaching, some research, and some writing. But my dream is still alive. 
-        </p>
-        <div class="box-container">
-            <div class="box">
-                <p> <span> age : </span> 21 </p>
-                <p> <span> gender : </span> male </p>
-                <p> <span> language : </span> Nepali, english, hindi </p>
-                <p> <span> work : </span> students </p>
-            </div>
-            <div class="box">
-                <p> <span> freelance : </span> available </p>
-                <p> <span> phone : </span> +9779748322749,+9779762487093 </p>
-                <p> <span> email : </span> krishnakadayat0109@gmail.com </p>
-                <p> <span> country : </span> Nepal </p>
-            </div>
-        </div>
-        <a href="#" class="btn">download CV</a>
-        <a href="#" class="btn">hire me</a>
-    </div>
+</div>
 
 </div>
 
-<h1 class="heading"> <span> my </span> skills </h1>
-
-<div class="row-2">
-
-    <div class="skills">
-        <div class="progress">
-            <h3> web design <span> 95% </span> </h3>
-            <div class="bar"> <span></span> </div>
-        </div>
-        <div class="progress">
-            <h3> web development <span> 80% </span> </h3>
-            <div class="bar"> <span></span> </div>
-        </div>
-        <div class="progress">
-            <h3> computer basic <span> 75% </span> </h3>
-            <div class="bar"> <span></span> </div>
-        </div>
-        <div class="progress">
-            <h3> Computer diploma <span> 85% </span> </h3>
-            <div class="bar"> <span></span> </div>
-        </div>
-    </div>
-
-    <div class="box-container">
-
-        <div class="box">
-            <h3> >> 2+ </h3>
-            <p>years of experience</p>
-        </div>
-        <div class="box">
-            <h3> >>  </h3>
-            <p></p>
-        </div>
-        <div class="box">
-            <h3> >>  </h3>
-            <p></p>
-        </div>
-        <div class="box">
-            <h3> >> </h3>
-            <p></p>
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-<!-- about section ends -->
-
-<!-- service section starts  -->
-
-<section class="service" id="service">
-
-<h1 class="heading"> <span> my </span> services </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <i class="fas fa-code"></i>
-            <h3>web design</h3>
-            <p></p>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-paint-brush"></i>
-            <h3>computer basic</h3>
-            <p></p>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-mobile"></i>
-            <h3>computer diploma</h3>
-            <p></p>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-bullhorn"></i>
-            <h3>programming</h3>
-            <p></p>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-chart-line"></i>
-            <h3>+</h3>
-            <p></p>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-envelope"></i>
-            <h3>+</h3>
-            <p></p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- service section ends -->
-
-<!-- experience section starts  -->
-
-<section class="experience" id="experience">
-
-    <h1 class="heading"> <span> my </span> experience </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <div class="content">
-                <span> 2021 - 2022 </span>
-                <h3>Gauri Secondary school</h3>
-                <p>Teaching</p>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="content">
-                <span> 2022 - 2023 </span>
-                <h3>Computer engineering Student of FWU</h3>
-                <p>Studing</p>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="content">
-                <span> 2023 - 2024 </span>
-                <h3>Computer engineering Student of FWU</h3>
-                <p></p>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="content">
-                <span> 2024 - 2025 </span>
-                <h3>Computer engineering Student of FWU</h3>
-                <p></p>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="content">
-                <span> 2025 - 2026 </span>
-                <h3>Computer engineering Student of FWU</h3>
-                <p></p>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="content">
-                <span>  </span>
-                <h3>Computer engineering Student of FWU</h3>
-                <p></p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- experience section ends -->
-
-<!-- portfolio section starts  -->
-
-<section class="hobbies" id="hobbies">
-
-    <h1 class="heading"> <span> my </span> hobbies </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="" alt="">
-            <h3> </h3>
-            <div class="icons">
-                <a href="#" class="fas fa-link"></a>
-                <a href="#" class="fas fa-share"></a>
-                <a href="#" class="fas fa-search"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="" alt="">
-            <h3>  </h3>
-            <div class="icons">
-                <a href="#" class="fas fa-link"></a>
-                <a href="#" class="fas fa-share"></a>
-                <a href="#" class="fas fa-search"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="img-3.jpg" alt="">
-            <h3> </h3>
-            <div class="icons">
-                <a href="#" class="fas fa-link"></a>
-                <a href="#" class="fas fa-share"></a>
-                <a href="#" class="fas fa-search"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="img-4.jpg" alt="">
-            <h3></h3>
-            <div class="icons">
-                <a href="#" class="fas fa-link"></a>
-                <a href="#" class="fas fa-share"></a>
-                <a href="#" class="fas fa-search"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="" alt="">
-            <h3> </h3>
-            <div class="icons">
-                <a href="#" class="fas fa-link"></a>
-                <a href="#" class="fas fa-share"></a>
-                <a href="#" class="fas fa-search"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="img-6.jpg" alt="">
-            <h3> </h3>
-            <div class="icons">
-                <a href="#" class="fas fa-link"></a>
-                <a href="#" class="fas fa-share"></a>
-                <a href="#" class="fas fa-search"></a>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- portfolio section ends -->
-
-<!-- contact section starts  -->
-
-<section class="contact" id="contact">
-
-    <h1 class="heading"> contact <span> me </span> </h1>
-
-    <div class="icons-container">
-
-        <div class="icons">
-            <i class="fas fa-envelope"></i>
-            <h3>my email</h3>
-            <p>krishnakadayat0109@gmail.com</p>
-            <p>krishnakadayat112@gmail.com</p>
-        </div>
-
-        <div class="icons">
-            <i class="fas fa-phone"></i>
-            <h3>my number</h3>
-            <p>+9779748322749</p>
-            <p>+9779762487093</p>
-        </div>
-
-        <div class="icons">
-            <i class="fas fa-map-marker-alt"></i>
-            <h3>my address</h3>
-            <p>sudurpaschim Bajhang, Nepal</p>
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <form action="">
-
-            <input type="text" placeholder="name" class="box">
-            <input type="email" placeholder="email" class="box">
-            <input type="number" placeholder="number" class="box">
-
-            <textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>
-
-            <input type="submit" class="btn" value="send message">
-
-        </form>
-
-        
-
-    </div>
-
-
-</section>
-
-<!-- contact section ends -->
-
-<!-- footer section  -->
-<footer class="footer"> created by <span> mr. Krishna Kadayat </span> | Thank you visited my website.</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- custom js file link  -->
-<script src="script.js"></script>
+<script>
+function setLang(lang){
+
+if(lang === "np"){
+document.getElementById("title").innerText = "म फुल स्ट्याक डेभलपर हुँ";
+document.getElementById("desc").innerText = "AI | Flask | Firebase | Kotlin विशेषज्ञ";
+document.getElementById("cv").innerText = "CV डाउनलोड";
+document.getElementById("name").innerText = "कृष्ण";
+}
+
+else{
+document.getElementById("title").innerText = "Full Stack Developer";
+document.getElementById("desc").innerText = "AI | Flask | Firebase | Kotlin Developer";
+document.getElementById("cv").innerText = "Download CV";
+document.getElementById("name").innerText = "Krishna";
+}
+
+}
+</script>
 
 </body>
 </html>
