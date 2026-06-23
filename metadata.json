@@ -1,0 +1,6 @@
+{
+  "name": "Professional Portfolio Platform",
+  "description": "An elegant, full-stack portfolio platform featuring dynamic projects, blog CMS, admin dashboard, GitHub API integration, and Gemini AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
