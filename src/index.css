@@ -26,3 +26,27 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(156, 163, 175, 0.5);
 }
+
+@layer base {
+  :root {
+    color-scheme: light;
+    background-color: #f4f4f6;
+    color: #111827;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    background-color: #050505;
+    color: #f8fafc;
+  }
+
+  html.dark body {
+    background-color: #050505;
+    color: #f8fafc;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: transparent;
+  }
+}

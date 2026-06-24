@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
@@ -12,21 +12,23 @@ import Admin from "./pages/Admin";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    const saved = localStorage.getItem("portfolio-theme");
-    if (saved) return saved === "dark";
+    if (typeof window !== "undefined") {
+      const saved = window.localStorage.getItem("portfolio-theme");
+      if (saved) return saved === "dark";
+    }
     // Default to a gorgeous clean light theme as mandated
     return false;
   });
 
-  useEffect(() => {
-    // Sync dark mode class with root HTML element
+  useLayoutEffect(() => {
+    // Sync dark mode class with root HTML element before paint
     const root = window.document.documentElement;
     if (darkMode) {
       root.classList.add("dark");
-      localStorage.setItem("portfolio-theme", "dark");
+      window.localStorage.setItem("portfolio-theme", "dark");
     } else {
       root.classList.remove("dark");
-      localStorage.setItem("portfolio-theme", "light");
+      window.localStorage.setItem("portfolio-theme", "light");
     }
   }, [darkMode]);
 
