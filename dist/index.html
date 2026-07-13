@@ -13,6 +13,21 @@
         delete sessionStorage.redirect;
         window.location.href = redirect;
       }
+      // Show loading state
+      window.addEventListener('load', () => {
+        const root = document.getElementById('root');
+        if (root && root.children.length === 0) {
+          root.innerHTML = '<div style="padding: 2rem; font-family: system-ui, sans-serif; color: #666; text-align: center; margin-top: 5rem;">Loading portfolio...</div>';
+        }
+      });
+      // Show error if app fails to load
+      window.addEventListener('error', (event) => {
+        console.error('Error loading app:', event);
+        const root = document.getElementById('root');
+        if (root) {
+          root.innerHTML = '<div style="padding: 2rem; font-family: system-ui, sans-serif; color: #d32f2f; text-align: center; margin-top: 5rem;">Error loading portfolio. Please refresh the page.</div>';
+        }
+      });
     </script>
   </head>
   <body>
