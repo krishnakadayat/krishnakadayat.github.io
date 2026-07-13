@@ -9,6 +9,18 @@
     <script>
       // GitHub Pages redirect for single-page app
       sessionStorage.redirect = location.href;
+      if (sessionStorage.redirect) {
+        const redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        window.location.href = redirect;
+      }
+      // Show loading state
+      window.addEventListener('load', () => {
+        const root = document.getElementById('root');
+        if (root && root.children.length === 0) {
+          root.innerHTML = '<div style="padding: 2rem; font-family: system-ui, sans-serif; color: #666; text-align: center; margin-top: 5rem;">Loading portfolio...</div>';
+        }
+      });
     </script>
   </head>
   <body>
