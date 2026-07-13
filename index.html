@@ -4,35 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>krishna kadayat</title>
-    <script type="module" crossorigin src="/assets/index-DvcGL-Z8.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-N52s2aBF.css">
-    <script>
-      // GitHub Pages redirect for single-page app
-      if (sessionStorage.redirect) {
-        const redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        window.location.href = redirect;
-      }
-      // Show loading state
-      window.addEventListener('load', () => {
-        const root = document.getElementById('root');
-        if (root && root.children.length === 0) {
-          root.innerHTML = '<div style="padding: 2rem; font-family: system-ui, sans-serif; color: #666; text-align: center; margin-top: 5rem;">Loading portfolio...</div>';
-        }
-      });
-      // Show error if app fails to load
-      window.addEventListener('error', (event) => {
-        console.error('Error loading app:', event);
-        const root = document.getElementById('root');
-        if (root) {
-          root.innerHTML = '<div style="padding: 2rem; font-family: system-ui, sans-serif; color: #d32f2f; text-align: center; margin-top: 5rem;">Error loading portfolio. Please refresh the page.</div>';
-        }
-      });
-    </script>
+    <script type="module" crossorigin src="/assets/index-CpXgZ4cR.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-OrS-vAIB.css">
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      if (window.location.protocol === 'file:') {
+        const root = document.getElementById('root');
+        if (root) {
+          root.innerHTML = `
+            <div style="padding: 2rem; font-family: system-ui, sans-serif; color: #111; background: #f8fafc; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+              <div style="max-width: 36rem;">
+                <h1 style="margin-bottom: 1rem; font-size: 1.5rem;">This app must be served by the Vite dev server.</h1>
+                <p style="margin-bottom: 1rem; font-size: 1rem; line-height: 1.5; color: #334155;">
+                  Open the app with <code style="background:#e2e8f0; padding:0.2rem 0.4rem; border-radius:0.35rem;">npm run dev</code> and visit <a href="http://127.0.0.1:3000">http://127.0.0.1:3000</a> instead of loading this file directly.
+                </p>
+              </div>
+            </div>
+          `;
+        }
+      }
+    </script>
   </body>
-</html>
 </html>
 
