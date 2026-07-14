@@ -58,7 +58,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const login = async (email: string, password: string) => {
     setLoading(true);
     const lowerEmail = email.toLowerCase().trim();
-    if ((lowerEmail === "krishna" || lowerEmail === "krishna@gmail.com" || lowerEmail === "krishna@example.com" || lowerEmail === "krishnakadayat112@gmail.com") && password === "krishnakdt") {
+    if ((lowerEmail === "krish" || lowerEmail === "krish@gmail.com" || lowerEmail === "krish@example.com" || lowerEmail === "krishnakadayat112@gmail.com") && password === "password") {
       setIsDemoUser(true);
       setUser({
         uid: "admin-krishna",
