@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import Dashboard from "../dashboard/Dashboard";
-import { Terminal, Lock, AlertCircle, KeyRound, Sparkles } from "lucide-react";
+import { Terminal, Lock, AlertCircle } from "lucide-react";
 
 export default function Admin() {
-  const { user, isDemoUser, login, loginDemo, loading } = useAuth();
+  const { user, isDemoUser, login, loading } = useAuth();
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,10 +37,6 @@ export default function Admin() {
     } finally {
       setLoggingIn(false);
     }
-  };
-
-  const handleDemoBypass = () => {
-    loginDemo();
   };
 
   if (loading) {
@@ -132,22 +128,6 @@ export default function Admin() {
             <span>{loggingIn ? "Verifying Keys..." : "Access Administrative Link"}</span>
           </button>
         </form>
-
-        {/* Demo Live Preview Bypassing link */}
-        <div className="border-t border-zinc-100 dark:border-zinc-800/60 pt-6 mt-6">
-          <button
-            type="button"
-            onClick={handleDemoBypass}
-            className="w-full inline-flex items-center justify-center space-x-2 px-4 py-2.5 border border-dashed border-zinc-200 dark:border-zinc-800 text-xs font-mono font-medium rounded-lg text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white bg-white hover:bg-zinc-50 dark:bg-zinc-900/40 dark:hover:bg-zinc-900/80 transition-all cursor-pointer"
-          >
-            <Sparkles size={13} className="text-zinc-400 animate-pulse" />
-            <span>Launch Live Preview (1-Click Admin)</span>
-          </button>
-          
-          <p className="text-[10px] text-zinc-400 dark:text-zinc-500 text-center mt-3 leading-normal">
-            *Demo admin mode grants instant access to explore, add, coordinate, edit, and delete projects, write blogs, and analyze client inquiries.*
-          </p>
-        </div>
 
       </div>
     </div>
